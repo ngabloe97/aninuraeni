@@ -58,7 +58,7 @@
 
           //layer utama
           //layer point
-    			lyrSekolah=L.geoJSON.ajax('data/tsekolah.geojson', {pointToLayer:returnSekolahMarker}).addTo(mymap);
+    			lyrSekolah=L.geoJSON.ajax('data/ts.geojson', {pointToLayer:returnSekolahMarker}).addTo(mymap);
           lyrSekolah.on('data:loaded', function(){
             mymap.fitBounds(lyrSekolah.getBounds());
           });
