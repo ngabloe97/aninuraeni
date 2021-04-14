@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "hmsekolah",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "NAMA": "SMA N 6 TASIKMALAYA", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.1877217379011, -7.273043891955266, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA Terpadu Lisa'adati Daaronini", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.168414807529402, -7.305601441903077, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA Pasundan 2 Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.200688853125897, -7.302577236888959, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA N 2 Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.202733189811198, -7.302308077672981, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA N 10 Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.173452574386701, -7.357920028132029, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA Pasundan 1 Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.223604367549996, -7.324130333056993, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA N 4 Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.206933636112893, -7.330126710560752, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA N 1 Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.223552208422106, -7.332480673434481, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA N 5 Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.222331482040502, -7.332195275004548, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA Pancasila Tasikmalaya", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.217149514951103, -7.339882233647026, 0.0 ] } },
+{ "type": "Feature", "properties": { "NAMA": "SMA N 1 Jatiwaras", "JENIS_UTAMA": "FASILITAS UMUM", "JENIS": "PENDIDIKAN", "OBJEK": "SEKOLAH SMA\/SMK" }, "geometry": { "type": "Point", "coordinates": [ 108.201815940623206, -7.467595099879071, 0.0 ] } }
+]
+}

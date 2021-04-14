@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>webGIS Course - Add Point</title>
+
+    <link rel="stylesheet" href="leaflet/example/leaflet.css">
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <script type="text/javascript" src="src/leaflet-src.js"></script>
+    <script type="text/javascript" src="src/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="src/plugin/leaflet.ajax.min.js"></script>
+    <script type="text/javascript" src="src/plugin/leaflet-providers.js"></script>
+
+    <!--halaman peta slur-->
+    <style type="text/css">
+    	#mapdiv {
+    		height: 100vh;
+    	}
+    </style>
+ </head>
+
+    <body>
+    	<body>
+
+        <div id="side-bar" class="col-md-3"></div>
+    		<div id="mapdiv" class="col-md-9"></div>
+
+    		<script type="text/javascript">
+
+    			var mymap;
+
+    			var lyrOSM;
+    			var lyrWatercolor;
+    			var lyrTopo;
+    			var lyrImagery;
+    			var lyrOutdoors;
+
+    			var lyrSekolah;
+    			var lyrJalan;
+    			var lyrLahan;
+
+    			var ctlLayers;
+    			var objBasemaps;
+    			var objOverlays;
+
+          /*function slur*/
+    			$(document).ready(function() {
+
+          //inisialisasi peta slur
+    			mymap=L.map('mapdiv', {center:[-7.31878, 108.18867], zoom:12});
+
+          //inisialisasi layer & layer basemaps
+					lyrOSM=L.tileLayer.provider('OpenStreetMap.Mapnik');
+					lyrTopo=L.tileLayer.provider('OpenTopoMap');
+					lyrImagery=L.tileLayer.provider('Esri.WorldImagery');
+					lyrOutdoors=L.tileLayer.provider('Thunderforest.Outdoors');
+					lyrWatercolor=L.tileLayer.provider('Stamen.Watercolor');
+    			mymap.addLayer(lyrOSM);
+
+          //layer utama
+          //layer point
+    			lyrSekolah=L.geoJSON.ajax('data/tsekolah.geojson', {pointToLayer:returnSekolahMarker}).addTo(mymap);
+          lyrSekolah.on('data:loaded', function(){
+            mymap.fitBounds(lyrSekolah.getBounds());
+          });
+
+          //layer polyline
+    			lyrJalan=L.geoJSON.ajax('data/jalan.geojson', {style:styleJalan}).addTo(mymap);
+          lyrJalan.on('data:loaded', function(){
+          });
+
+          //layer polygon
+    			lyrLahan=L.geoJSON.ajax('data/lahan.geojson',{style:styleLahan}).addTo(mymap);
+          lyrLahan.on('data:loaded', function(){
+          });
+
+
+          /*setup layer control*/
+          objBasemaps = {
+              "Open OpenStreet Map": lyrOSM,
+              "Topo Map": lyrTopo,
+              "Imagery": lyrImagery,
+              "Outdoors": lyrOutdoors,
+              "Watercolor":lyrWatercolor
+          };
+
+          objOverlays = {
+            "Sekolah":lyrSekolah,
+            "Jaringan Jalan":lyrJalan,
+            "Lahan":lyrLahan
+          };
+          ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(mymap);
+    			});
+
+          /*simbologi & simbologi point*/
+          function returnSekolahMarker(json,latlng){
+            var att=json.properties;
+            if (att.status=='RTLH'){
+              var clrSekolah='deeppink';
+            }  else {
+                var clrSekolah = 'deeppink';
+              }
+              return L.circleMarker(latlng, {radius:7, color:clrSekolah}).bindTooltip("<h4> Sekolah: "+att.object_id+"</h4>status: "+att.status);
+          }
+
+          function styleJalan(json){
+            var att=json.properties;
+            switch (att.type) {
+              case 'Jalan Nasional':
+                  return{color:'red'};
+                break;
+                case 'Jalan Provinsi':
+                    return{color:'orange'};
+                  break;
+                  case 'Jalan Kabupaten':
+                      return{color:'yellow'};
+                    break;
+              default:
+              return {color:'darkgoldenrod'}
+            }
+          }
+
+          /*simbologi Lahan*/
+          function styleLahan(json){
+            var att = json.properties;
+            switch (att.landuse) {
+              case 'Pertanian':
+                return {color:'#000fff'};
+                break;
+              default:
+                return {color:'#000fff'}
+            }
+          }
+
+    		</script>
+    	</body>
+    </body>
+    </html>
